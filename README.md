@@ -75,7 +75,7 @@ To compare the "Actual" data against a "Theoretical" ideal, I generated a PDF cu
   To create a smooth curve, I generated 50 equally spaced duration values (Z) across the histogram's range:
 
     * **Start Point:** $5,000$ ms
-    * **Step Logic:** `=B21 + (600,000 - 5,000) / 50`
+    * **Step Logic:** `=start_point or prev_cell + (600,000 - 5,000) / 50`
     * **Result:** A linear range from 5,000 to 600,000 ms.
 
 * **Mapping the Density (PDF Values)**
