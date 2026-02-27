@@ -135,7 +135,13 @@ We simulate and model to move from "Ideal" Population Parameters to "Actual" Sam
 
 Developed as part of the **Applied Statistics for Data Analytics** specialization by **DeepLearning.AI**.
 
-## 👤 About the Author
+---
 
-**Ayushi Gajendra** *Product & Operations Analyst*
-I specialize in using **Inferential Statistics** and **Distribution Modeling** to validate **Population Parameters** and drive data-backed strategy.
+## 👤 About the Author
+**Ayushi Gajendra** 
+
+*Data Analyst | Former EdTech Co-Founder*
+
+* **7+ Years** of experience in business operations, strategic growth, and entrepreneurial leadership.
+* I specialize in bridging the gap between raw data and **high-stakes business decisions**.
+* My goal is to help organizations move beyond "gut feeling" to drive growth through evidence-based strategy.
