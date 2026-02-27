@@ -188,3 +188,5 @@ Developed as part of the **Applied Statistics for Data Analytics** specializatio
 * **7+ Years** of experience in business operations, strategic growth, and entrepreneurial leadership.
 * I specialize in bridging the gap between raw data and **high-stakes business decisions**.
 * My goal is to help organizations move beyond "gut feeling" to drive growth through evidence-based strategy.
+
+### 🔗 Connect with me: [LinkedIn](https://www.linkedin.com/in/ayushi-gajendra/)
