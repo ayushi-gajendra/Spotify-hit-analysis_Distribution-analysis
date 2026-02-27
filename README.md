@@ -32,6 +32,13 @@ Following my initial descriptive and inferential analyses, this project serves a
 
 ---
 
+### 📂 Data Reference
+* **Source:** [Spotify Tracks Dataset via Hugging Face](https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset)
+* **Sample Size:** 3,000 tracks selected for granular statistical modeling.
+* **Primary Fields:** `duration_ms` (Track length) and `acousticness`.
+
+--- 
+
 ## ⚙️ Methodology: The Normality Stress Test
 
 
@@ -83,6 +90,32 @@ To compare the "Actual" data against a "Theoretical" ideal, I generated a PDF cu
     Using the `NORM.DIST` function, I calculated the probability density for each Z-value:
     
     **Formula:** `=NORM.DIST(z, 216299, 55427, FALSE)`
+
+* 📊 **Normal Distribution & PDF Mapping (Track Duration)**
+
+  | Track Duration (Z-Value) | PDF Value (Density) | Strategic Interpretation |
+  | --- | --- | --- |
+  | **5,000 ms** | 0.0000000050 | **Lower Limit:** Probability of a 5-second "song" is near zero. |
+  | **88,300 ms** | 0.0000005002 | **Short Tracks:** ~1.5 min tracks start entering the distribution tail. |
+  | **147,800 ms** | 0.0000033538 | **Rising Density:** Approaching the standard radio-edit window. |
+  | **207,300 ms** | **0.0000071033** | **The Statistical Peak:** Very close to the sample mean ($216,299$). |
+  | **219,200 ms** | **0.0000071877** | **Mode Approximation:** The highest probability density of the set. |
+  | **278,700 ms** | 0.0000038191 | **Extended Tracks:** Probability begins to decline for songs >4.5 mins. |
+  | **338,200 ms** | 0.0000006410 | **Long Cuts:** Density drops significantly as we cross +2 Standard Deviations. |
+  | **397,700 ms** | 0.0000000340 | **Operational Outlier:** High certainty that tracks here are non-standard. |
+  | **600,000 ms** | 0.0000000000 | **Upper Limit:** 10-minute tracks are statistically impossible in this model. |
+
+---
+
+### 🔬 Analytical Logic behind this Table
+
+* **The Z-Values:** Represent the independent variable (Song Duration in milliseconds). To ensure a smooth visualization, I generated 50 equally spaced points spanning the data range.
+* **Formula for X-Axis:** `Start: 5,000` | `Step: =B21 + (600,000 - 5,000) / 50`
+
+
+* **The PDF Value:** Calculated using `=NORM.DIST(z, 216299, 55427, FALSE)`. This quantifies the "relative likelihood" of a song being exactly that length.
+* **The Curve Alignment:** By comparing the peaks of this table to the actual histogram, we can prove that while the "Ideal" peak is at ~219k, the "Actual" data is slightly skewed—a key insight for operational strategy.
+
 
 * **Visualazition**
 
