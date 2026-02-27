@@ -91,36 +91,39 @@ To compare the "Actual" data against a "Theoretical" ideal, I generated a PDF cu
     
     **Formula:** `=NORM.DIST(z, 216299, 55427, FALSE)`
 
-Here is the distribution table for the first 10 calculated values of the PDF model.
 
+* 📊 **Normal Distribution & PDF Mapping (First 10 Values)**:
+  
+    Here is the distribution table for the first 10 calculated values of the PDF model.
 
-* 📊 **Normal Distribution & PDF Mapping (First 10 Values)**
-
-| Track Duration (Z-Value) | PDF Value (Density) | Strategic Interpretation |
-| --- | --- | --- |
-| **5,000 ms** | 0.0000000050 | **Lower Limit:** Probability of a 5-second "song" is near zero. |
-| **16,900 ms** | 0.0000000111 | **Micro-Tracks:** Initial density remains extremely low. |
-| **28,800 ms** | 0.0000000236 | **Short Forms:** Approaching "snippet" or intro lengths. |
-| **40,700 ms** | 0.0000000476 | **Rising Curve:** Starting to leave the far-left tail. |
-| **52,600 ms** | 0.0000000919 | **Sub-Minute:** Probability doubling every ~12k ms. |
-| **64,500 ms** | 0.0000001692 | **Interludes:** Common length for transitions or skits. |
-| **76,400 ms** | 0.0000002977 | **Transition Zone:** Increasing frequency of short tracks. |
-| **88,300 ms** | 0.0000005002 | **Standard Short:** ~1.5 min tracks start entering the curve. |
-| **100,200 ms** | 0.0000008025 | **Rising Probability:** Gaining momentum toward the mean. |
-| **112,100 ms** | 0.0000012296 | **Standard Radio:** Approaching the 2-minute mark. |
+  | Track Duration (Z-Value) | PDF Value (Density) | 
+  | --- | --- | 
+  | **5,000 ms** | 0.0000000050 | 
+  | **16,900 ms** | 0.0000000111 | 
+  | **28,800 ms** | 0.0000000236 | 
+  | **40,700 ms** | 0.0000000476 | 
+  | **52,600 ms** | 0.0000000919 | 
+  | **64,500 ms** | 0.0000001692 | 
+  | **76,400 ms** | 0.0000002977 | 
+  | **88,300 ms** | 0.0000005002 | 
+  | **100,200 ms** | 0.0000008025 | 
+  | **112,100 ms** | 0.0000012296 | 
 
 ---
 
 ### 🔬 Analytical Logic behind these Values
 
-* **Calculation for X-Axis (Z-Values):** To ensure a smooth visualization, 50 points were generated.
-* **Note:** Only the **first 10 values** are displayed here to illustrate the rising slope of the left tail.
-* **Step Logic:** Starting at `5,000`, each subsequent value increases by `=B21 + (600,000 - 5,000) / 50`.
-
-
-* **The PDF Value:** This represents the height of the bell curve calculated via `=NORM.DIST(z, 216299, 55427, FALSE)`.
-* **The Strategic Narrative:** These first 10 values quantify why "short" songs are rare in a Normal Distribution—the density is nearly 1,500x lower at 5,000ms than it is at the 219,000ms peak.
-* **The Curve Alignment:** By comparing the peaks of this table to the actual histogram, we can prove that while the "Ideal" peak is at ~219k, the "Actual" data is slightly skewed—a key insight for operational strategy.
+  * **Calculation for X-Axis (Z-Values):** To ensure a smooth visualization, 50 points were generated.
+ 
+  * **Note:** Only the **first 10 values** are displayed here to illustrate the rising slope of the left tail.
+  
+  * **Step Logic:** Starting at `5,000`, each subsequent value increases by `= prev_cell_value + (600,000 - 5,000) / 50`.
+  
+  * **The PDF Value:** This represents the height of the bell curve calculated via `=NORM.DIST(z, 216299, 55427, FALSE)`.
+  
+  * **The Strategic Narrative:** These first 10 values quantify why "short" songs are rare in a Normal Distribution—the density is nearly 1,500x lower at 5,000ms than it is at the 219,000ms peak.
+  
+  * **The Curve Alignment:** By setting the cumulative parameter to FALSE, I modeled the exact probability "height" for 50 equally spaced duration values, rather than the area under it. This allowed for a direct overlay against the actual histogram. By comparing the peaks of this table to the actual histogram, we can prove that while the "Ideal" peak is at ~219k, the "Actual" data is slightly skewed — a key insight for operational strategy.
 
 ---
 
@@ -135,13 +138,13 @@ Here is the distribution table for the first 10 calculated values of the PDF mod
   </p>
 
 * **Logic:**
-    By setting the cumulative parameter to FALSE, I modeled the exact probability "height" for 50 equally spaced duration values, rather than the area under it. This allowed for a direct overlay against the actual histogram. We were able to visualize where the "Actual" industry data deviates from the "Theoretical" ideal, highlighting the slight skewness in the dataset.
+    
 
 ---
 
 ## 🔬 Analytical Deep Dive: Why Simulate & Model?
 
-We simulate and model to move from "Ideal" Population Parameters to "Actual" Sample Statistics.
+  We simulate and model to move from "Ideal" Population Parameters to "Actual" Sample Statistics.
 
   * **Quantifying Volatility:** Simulation quantifies the **Standard Error**—showing how much our sample mean might "wiggle" in a real-world batch of songs compared to the theoretical mean.
   
